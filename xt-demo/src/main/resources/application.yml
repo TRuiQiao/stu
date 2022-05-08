@@ -1,2 +1,9 @@
 server:
   port: 8080
+
+spring:
+  mvc:
+    pathmatch:
+      # springboot集成Swagger2报错
+      # Springboot2.6以后将SpringMVC默认路径匹配策略从AntPathMatcher更改为PathPatternParser，导致出错
+      matching-strategy: ANT_PATH_MATCHER
