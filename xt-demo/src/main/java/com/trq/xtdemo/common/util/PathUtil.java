@@ -16,7 +16,7 @@ import java.io.IOException;
 public class PathUtil {
 
     public static String createPath(String... paths) throws IOException {
-        String basePath = "D:\\temp\\upload\\";
+        String basePath = "D:\\temp\\pdfToImage\\upload\\";
         StringBuffer buffer = new StringBuffer();
         buffer.append(basePath);
 
