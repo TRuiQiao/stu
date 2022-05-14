@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <!-- 设置系统日志目录 -->
+<!--    <springProperty scope="context" name="springAppName" source="spring.application.name"/>-->
+
+    <!-- 彩色日志 -->
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+
+    <!-- 彩色日志格式 -->
+    <property name="LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSSS} - [thread:%thread] - [txId:%X{requestId}] - [clientIp:%X{clientIp}] - [PID:${PID:- }]\n - ${LOG_LEVEL_PATTERN:-%5p} - [%class : %method : %line] - %msg%n"/>
+
+    <!--定义⽇志⽂件的存储地址勿在 LogBack 的配置中使⽤相对路径-->
+    <property name="LOG_HOME" value="/wls/applogs/rtlog"/>
+
+    <!--控制台⽇志，控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!--⽂件⽇志，按照每天⽣成⽇志⽂件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--⽇志⽂件输出的⽂件名-->
+            <FileNamePattern>${LOG_HOME}/xt-demo-%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <!--⽇志⽂件保留天数-->
+            <MaxHistory>30</MaxHistory>
+            <!--⽇志⽂件最⼤的⼤⼩-->
+            <MaxFileSize>20MB</MaxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+    </appender>
+
+
+    <logger name="o.s" level="WARN"/>
+    <logger name="o.r.connect" level="WARN"/>
+    <logger name="druid.sql" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="com.alibaba" level="WARN"/>
+    <logger name="ch.qos.logback" level="WARN"/>
+
+    <!-- ⽇志输出级别 -->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

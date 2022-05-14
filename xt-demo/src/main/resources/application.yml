@@ -1,5 +1,7 @@
 server:
   port: 8080
+  servlet:
+    context-path: /xt-demo
 
 spring:
   mvc:
@@ -7,3 +9,34 @@ spring:
       # springboot集成Swagger2报错
       # Springboot2.6以后将SpringMVC默认路径匹配策略从AntPathMatcher更改为PathPatternParser，导致出错
       matching-strategy: ANT_PATH_MATCHER
+  servlet:
+    multipart:
+      max-request-size: 50MB
+      max-file-size: 50MB
+  profiles:
+    active: ${DEPLOYMODE:dev}
+  jackson:
+    time-zone: GMT+8
+
+mybatis-plus:
+  mapper-locations:
+  global-config:
+    db-config:
+      field-strategy: not_empty
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 日志配置文件路径
+logging:
+  config: classpath:logback.xml
+feign:
+  httpclient:
+    connection-timeout: 3000
+
+pagehelper:
+  helper-dialect: mysql
+  page-size-zero: true
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true

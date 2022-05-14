@@ -1,0 +1,14 @@
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name:
+    url:
+    username:
+    password:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      auto-commit: false
+      connection-timeout: 3000
+
+
