@@ -1,6 +1,6 @@
 package com.trq.xtdemo.common.util;
 
-import com.trq.xtdemo.common.dto.resp.PdfFileToImageResp;
+import com.trq.xtdemo.biz.dto.resp.PdfFileToImageResp;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.multipdf.Splitter;

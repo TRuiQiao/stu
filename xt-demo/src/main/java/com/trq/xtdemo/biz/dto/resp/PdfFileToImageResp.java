@@ -1,4 +1,4 @@
-package com.trq.xtdemo.common.dto.resp;
+package com.trq.xtdemo.biz.dto.resp;
 
 import com.trq.xtdemo.common.dto.base.BaseResp;
 import lombok.Data;

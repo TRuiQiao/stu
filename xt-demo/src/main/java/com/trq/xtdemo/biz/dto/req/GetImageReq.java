@@ -1,4 +1,4 @@
-package com.trq.xtdemo.common.dto.req;
+package com.trq.xtdemo.biz.dto.req;
 
 import com.trq.xtdemo.common.dto.base.BasePageReq;
 import lombok.Data;

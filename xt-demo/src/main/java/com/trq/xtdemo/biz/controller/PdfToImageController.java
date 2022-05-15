@@ -2,8 +2,8 @@ package com.trq.xtdemo.biz.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.trq.xtdemo.common.dto.base.BaseResponse;
-import com.trq.xtdemo.common.dto.req.GetImageReq;
-import com.trq.xtdemo.common.dto.resp.PdfFileToImageResp;
+import com.trq.xtdemo.biz.dto.req.GetImageReq;
+import com.trq.xtdemo.biz.dto.resp.PdfFileToImageResp;
 import com.trq.xtdemo.common.util.PdfToImageUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
