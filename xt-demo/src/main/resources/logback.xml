@@ -11,7 +11,8 @@
 
     <!-- 彩色日志格式 -->
     <property name="LOG_PATTERN"
-              value="%d{yyyy-MM-dd HH:mm:ss.SSSS} - [thread:%thread] - [txId:%X{requestId}] - [clientIp:%X{clientIp}] - [PID:${PID:- }]\n - ${LOG_LEVEL_PATTERN:-%5p} - [%class : %method : %line] - %msg%n"/>
+              value = "%clr(%d{yyyy-MM-dd HH:mm:ss.SSSS}){faint} - %clr([thread:%thread]){magenta} - %clr([txId:%X{reqId}]){magenta} - %clr([clientIp:%X{clientIp}]){magenta} - %clr([PID:${PID:- }]){magenta}\n - %clr(${LOG_LEVEL_PATTERN:-%5p}) - %clr([%class : %method : %line]){cyan} - %msg%n"/>
+<!--              value="%d{yyyy-MM-dd HH:mm:ss.SSSS} - [thread:%thread] - [txId:%X{reqId}] - [clientIp:%X{clientIp}] - [PID:${PID:- }]\n - ${LOG_LEVEL_PATTERN:-%5p} - [%class : %method : %line] - %msg%n"/>-->
 
     <!--定义⽇志⽂件的存储地址勿在 LogBack 的配置中使⽤相对路径-->
     <property name="LOG_HOME" value="/wls/applogs/rtlog"/>

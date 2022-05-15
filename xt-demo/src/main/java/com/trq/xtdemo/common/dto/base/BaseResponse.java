@@ -1,6 +1,7 @@
 package com.trq.xtdemo.common.dto.base;
 
 import com.alibaba.fastjson.JSONObject;
+import com.trq.xtdemo.common.constants.CommonConstants;
 import com.trq.xtdemo.common.enums.BaseResponseEnum;
 import lombok.Data;
 import org.slf4j.MDC;
@@ -20,7 +21,7 @@ public class BaseResponse<T> implements Serializable {
     /**
      * 请求id
      */
-    private String reqId = MDC.get("reqId");
+    private String reqId = MDC.get(CommonConstants.REQ_ID);
     /**
      * 响应码
      */

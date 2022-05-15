@@ -13,7 +13,8 @@ public enum BaseResponseEnum {
 
     SUCCESS("200", "成功"),
     FAILED("300", "失败"),
-    EXCEPTION("900", "异常");
+    EXCEPTION("900", "业务异常"),
+    UN_KNOW_EXCEPTION("901", "未知异常");
 
     private String code;
     private String msg;
