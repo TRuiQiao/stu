@@ -27,9 +27,6 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-# 日志配置文件路径
-logging:
-  config: classpath:logback.xml
 feign:
   httpclient:
     connection-timeout: 3000
@@ -40,3 +37,7 @@ pagehelper:
   params: count=countSql
   reasonable: true
   support-methods-arguments: true
+
+# 日志配置文件路径
+logging:
+  config: classpath:logback.xml
