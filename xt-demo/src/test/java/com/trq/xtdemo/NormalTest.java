@@ -1,5 +1,6 @@
 package com.trq.xtdemo;
 
+import com.trq.xtdemo.common.util.idworker.Snowflake;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -18,7 +19,8 @@ public class NormalTest {
     @Test
     public void test() {
 //        System.out.println(isPalindrome(-121));
-        System.out.println(romanToInt1("MCMXCIV"));
+//        System.out.println(romanToInt1("MCMXCIV"));
+        System.out.println(new Snowflake(1, 3).nextId());
     }
 
 
