@@ -1,14 +1,10 @@
 spring:
   # 数据库配置
   datasource:
-    driver-class-name:
-    url:
-    username:
-    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xt_demo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezon=GMT%2B8
+    username: root
+    password: root
     type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      maximum-pool-size: 20
-      auto-commit: false
-      connection-timeout: 3000
 
 

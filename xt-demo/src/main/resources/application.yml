@@ -17,9 +17,16 @@ spring:
     active: ${DEPLOYMODE:dev}
   jackson:
     time-zone: GMT+8
+  # 数据库配置
+  datasource:
+    hikari:
+      auto-commit: false
+      connection-timeout: 3000
+      minimum-idle: 4
+      maximum-pool-size: 20
 
 mybatis-plus:
-  mapper-locations:
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
   global-config:
     db-config:
       field-strategy: not_empty

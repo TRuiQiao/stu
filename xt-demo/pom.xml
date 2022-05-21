@@ -24,7 +24,7 @@
         <swagger.version>2.7.0</swagger.version>
         <hutool.version>5.7.11</hutool.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
-        <pagehelper.version>1.2.12</pagehelper.version>
+        <pagehelper.version>1.4.2</pagehelper.version>
         <aspectjrt.version>1.9.6</aspectjrt.version>
         <pdfbox.version>2.0.19</pdfbox.version>
         <lombok.version>1.18.12</lombok.version>
@@ -131,7 +131,7 @@
             <version>${mybatis-plus.version}</version>
         </dependency>
 
-        <!-- pagehelper -->
+        <!-- pagehelper,和springboot版本要匹配 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
@@ -202,18 +202,18 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>${java.version}</source>-->
+<!--                    <target>${java.version}</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
