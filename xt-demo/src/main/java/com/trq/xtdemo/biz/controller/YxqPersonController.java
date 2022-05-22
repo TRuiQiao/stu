@@ -1,6 +1,8 @@
 package com.trq.xtdemo.biz.controller;
 
 import com.trq.xtdemo.biz.dto.YxqPersonDTO;
+import com.trq.xtdemo.biz.dto.req.YxqPersonListReq;
+import com.trq.xtdemo.biz.dto.resp.YxqPersonListResp;
 import com.trq.xtdemo.biz.service.YxqPersonService;
 import com.trq.xtdemo.common.dto.base.BaseResponse;
 import io.swagger.annotations.Api;
@@ -30,5 +32,11 @@ public class YxqPersonController {
     public BaseResponse update(@RequestBody YxqPersonDTO dto) {
         personService.updateByPersonId(dto);
         return BaseResponse.success();
+    }
+
+    @ApiOperation(value = "查询用户列表")
+    @PostMapping("/queryList")
+    public BaseResponse<YxqPersonListResp> queryList(@RequestBody YxqPersonListReq req) {
+        return BaseResponse.success(personService.queryYxqPersonList(req));
     }
 }

@@ -1,6 +1,8 @@
 package com.trq.xtdemo.biz.service;
 
 import com.trq.xtdemo.biz.dto.YxqPersonDTO;
+import com.trq.xtdemo.biz.dto.req.YxqPersonListReq;
+import com.trq.xtdemo.biz.dto.resp.YxqPersonListResp;
 
 /**
  * @author trq
@@ -15,4 +17,10 @@ public interface YxqPersonService {
      * @return
      */
     int updateByPersonId(YxqPersonDTO dto);
+
+    /**
+     * 用户列表
+     * @return
+     */
+    YxqPersonListResp queryYxqPersonList(YxqPersonListReq req);
 }

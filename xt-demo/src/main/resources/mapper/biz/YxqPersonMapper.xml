@@ -22,4 +22,12 @@
         where
               person_id = #{personId}
     </update>
+
+    <select id="queryYxqPersonList" resultType="com.trq.xtdemo.biz.dto.YxqPersonDTO"
+            parameterType="com.trq.xtdemo.biz.dto.req.YxqPersonListReq">
+        select
+            *
+        from
+             t_yxq_person
+    </select>
 </mapper>
