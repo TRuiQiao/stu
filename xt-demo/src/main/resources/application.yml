@@ -4,6 +4,8 @@ server:
     context-path: /xt-demo
 
 spring:
+  application:
+    name: xt-demo
   mvc:
     pathmatch:
       # springboot集成Swagger2报错
@@ -38,6 +40,24 @@ feign:
   httpclient:
     connection-timeout: 3000
 
+# eureka相关配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8011/eureka/
+  instance:
+    prefer-ip-address: true
+    status-page-url: http://localhost:${server.port}/${spring.application.name}/swagger-ui.html
+
+
+
+#方式2：负载均衡配置文件
+#指定使用Nacos提供的负载均衡策略（优先调用同一集群实例，基于随机和权重）
+#service-stock:
+#  ribbon:
+#    #NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.
+
 pagehelper:
   helper-dialect: mysql
   page-size-zero: true
@@ -48,3 +68,4 @@ pagehelper:
 # 日志配置文件路径
 logging:
   config: classpath:logback.xml
+
