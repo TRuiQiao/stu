@@ -1,0 +1,49 @@
+server:
+  port: 8011
+  servlet:
+  context-path: /xt-eureka
+
+spring:
+  application:
+    name: xt-eureka
+
+# eureka相关配置
+eureka:
+  server:
+    enable-self-preservation: false
+    # 续期时间，即扫描失效服务的间隔时间（缺省为 60*1000ms）
+    eviction-interval-timer-in-ms: 1000
+  instance:
+    hostname: xt-eureka
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+# 日志配置文件路径
+logging:
+  config: classpath:logback.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
