@@ -206,6 +206,19 @@ springcloud F 及F版本以上 springboot 2.0 以上基本上使用openfeign，o
             <version>1.2.76</version>
         </dependency>
 
+        <!--easyexcel-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>2.2.6</version>
+        </dependency>
+
+        <!-- spring-retry -->
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

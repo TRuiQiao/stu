@@ -31,11 +31,14 @@ public class PdfToImageUtil {
     /**
      * DPI值越大，转换后越清晰，但相对转换速度也越慢
      */
-    public static final Integer DPI = 80;
+//    public static final Integer DPI = 80;
+    public static final Integer DPI = 200;
     /**
      * 转换后的图片格式
      */
     private static final String IMG_TYPE_PNG = "png";
+
+    private static final String IMG_TYPE_JPG = "jpg";
 
     /**
      * pdf文件上传
